@@ -1,6 +1,7 @@
 package com.example.weatherforecast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         searchField = findViewById(R.id.et_search_city);
         searchImageButton = findViewById(R.id.ib_search);
