@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener buttonSearch = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText("Кнопка была нажата " + counter + " раз!");
+                result.setText("Азат " + counter + " кратный лох!");
                 counter++;
             }
         };
