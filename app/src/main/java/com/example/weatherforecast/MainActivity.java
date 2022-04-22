@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -24,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
         searchImageButton = findViewById(R.id.ib_search);
         result = findViewById(R.id.tv_result);
 
-        View.OnClickListener onClickListener = new View.OnClickListener() {
+        View.OnClickListener buttonSearch = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText("Работает!");
+                result.setText("Кнопка была нажата раз!");
             }
         };
 
-        searchImageButton.setOnClickListener(onClickListener);
+        searchImageButton.setOnClickListener(buttonSearch);
 
     }
 }
