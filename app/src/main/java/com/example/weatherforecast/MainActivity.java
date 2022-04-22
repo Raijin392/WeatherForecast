@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText searchField;
     private ImageButton searchImageButton;
     private TextView result;
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
         searchField = findViewById(R.id.et_search_city);
         searchImageButton = findViewById(R.id.ib_search);
         result = findViewById(R.id.tv_result);
+        counter = 1;
 
         View.OnClickListener buttonSearch = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText("Кнопка была нажата раз!");
+                result.setText("Кнопка была нажата " + counter + " раз!");
+                counter++;
             }
         };
 
