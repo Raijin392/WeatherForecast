@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/result"
-        android:textColor="#1f2b6c" />
+        android:textColor="#B5BFF1" />
 
 
 </LinearLayout>
