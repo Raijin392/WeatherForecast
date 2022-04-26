@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(String response) {
+            if (response == null) {
+                response = "City not found. Try again!";
+            }
             result.setText(response);
         }
 
