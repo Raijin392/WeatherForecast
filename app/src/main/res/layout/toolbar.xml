@@ -7,7 +7,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="25dp"
         android:layout_height="45dp">
 
         <ImageView
@@ -15,9 +15,10 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@drawable/lupa"/>
+            android:src="@drawable/whitelupa"/>
 
         <TextView
+            android:id="@+id/toolbarCity"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="20"
@@ -26,12 +27,15 @@
             android:textColor="#E2E6F8"
             android:text="Kazan" />
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/toolbarImageButton"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
+            android:scaleType="fitCenter"
             android:layout_weight="1"
-            android:src="@drawable/brain"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/stargrey"/>
 
     </LinearLayout>
 

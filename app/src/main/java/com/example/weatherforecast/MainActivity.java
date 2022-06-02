@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -28,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView result;
     private LinearLayout searchBar;
 
-    private boolean fck;
+
+    private boolean proverka;
     private String lonCity = null;
     private String latCity = null;
+    private String city = null;
     private static final String EXCEPTION = "City not found. Try again!";
 
     class WeatherQueryTask extends AsyncTask<URL, Void, String> {
@@ -51,23 +54,25 @@ public class MainActivity extends AppCompatActivity {
             try {
 
                 if (response == null) {
-                    fck = false;
-                    response = EXCEPTION;
+                    proverka = false;
                 } else {
+
                     JSONObject jsonResponse = new JSONObject(response);
+                    city = jsonResponse.getString("name");
+
                     JSONObject jsonObjectCOORD = jsonResponse.getJSONObject("coord");
 
                     lonCity = jsonObjectCOORD.getString("lon");
                     latCity = jsonObjectCOORD.getString("lat");
 
-                    fck = true;
+                    proverka = true;
                 }
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            if (fck == false) {
+            if (proverka == false) {
                 result.setText(EXCEPTION);
             }
 
@@ -84,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
         searchBar = findViewById(R.id.search_bar);
         searchBar.setBackgroundResource(R.drawable.rounded_corners);
         searchImageButton = findViewById(R.id.ib_search);
-        result = findViewById(R.id.tv_result);
+
+        result = findViewById(R.id.tv_result1);
 
         View.OnClickListener buttonSearch = new View.OnClickListener() {
             @Override
@@ -92,17 +98,17 @@ public class MainActivity extends AppCompatActivity {
                 URL generatedURL = generateURL(searchField.getText().toString());
                 new WeatherQueryTask().execute(generatedURL);
 
-                if (fck) {
+                if (proverka) {
                     Intent intent = new Intent(MainActivity.this, CityWeatherActivity.class);
                     intent.putExtra("lon", lonCity);
                     intent.putExtra("lat", latCity);
+                    intent.putExtra("city", city);
                     startActivity(intent);
-                    fck = false;
+                    proverka = false;
                 }
 
             }
         };
-
         searchImageButton.setOnClickListener(buttonSearch);
 
     }

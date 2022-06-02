@@ -38,6 +38,7 @@ public class NetworkUtils {
                 .appendQueryParameter(PARAM_QUERY_CITY, city)
                 .appendQueryParameter(PARAM_KEY, KEY)
                 .appendQueryParameter(PARAM_UNITS, UNITS)
+                .appendQueryParameter(PARAM_LANG, LANG)
                 .build();
         URL url = null;
         try {

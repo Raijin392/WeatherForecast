@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bluemountainback"
+    android:background="@drawable/bluemountainbackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,39 +17,38 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="200dp"
+                android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/CurrentIcon"
                     android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/warning" />
-
-                <ImageView
-                    android:id="@+id/weather_icon"
-                    android:layout_width="200dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="-30dp"
-                    android:src="@drawable/cloudywithsun" />
+                    android:layout_height="75dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/d01d" />
 
                 <TextView
+                    android:id="@+id/CurrentTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignRight="@id/weather_icon"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="-93dp"
-                    android:layout_marginBottom="3dp"
+                    android:layout_gravity="center"
+                    android:textColor="#E7EBFB"
                     android:text="11C°"
-                    android:textSize="50sp" />
+                    android:textSize="40sp" />
 
-            </RelativeLayout>
+                <TextView
+                    android:id="@+id/CurrentDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="69dp"
+                    android:layout_gravity="center"
+                    android:text="Description"
+                    android:textColor="#DAF0FF"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
 
 <!--            -->
 
@@ -63,655 +62,799 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="8dp">
+
                     <!-- 00:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 00:00"
+                            android:id="@+id/HourlyTime1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon1"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp1"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  8С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 01:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 01:00"
+                            android:id="@+id/HourlyTime2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon2"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp2"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  8С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 02:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 02:00"
+                            android:id="@+id/HourlyTime3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon3"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp3"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="  8С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 03:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 03:00"
+                            android:id="@+id/HourlyTime4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon4"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp4"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="11С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 04:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 04:00"
+                            android:id="@+id/HourlyTime5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
-
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/sun"/>
+                            android:id="@+id/HourlyIcon5"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp5"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 05:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 05:00"
+                            android:id="@+id/HourlyTime6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/sun"/>
+                            android:id="@+id/HourlyIcon6"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp6"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="14С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 06:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 06:00"
+                            android:id="@+id/HourlyTime7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/sun"/>
+                            android:id="@+id/HourlyIcon7"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp7"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 07:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 07:00"
+                            android:id="@+id/HourlyTime8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/cloudywithsun"/>
+                            android:id="@+id/HourlyIcon8"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp8"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="17С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 08:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 08:00"
+                            android:id="@+id/HourlyTime9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/cloudywithsun"/>
+                            android:id="@+id/HourlyIcon9"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp9"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="21С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 09:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 09:00"
+                            android:id="@+id/HourlyTime10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/cloudy"/>
+                            android:id="@+id/HourlyIcon10"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp10"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 10:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 10:00"
+                            android:id="@+id/HourlyTime11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon11"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp11"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 11:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 11:00"
+                            android:id="@+id/HourlyTime12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon12"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp12"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 12:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 12:00"
+                            android:id="@+id/HourlyTime13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon13"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp13"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 13:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 13:00"
+                            android:id="@+id/HourlyTime14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon14"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp14"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="24С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 14:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 14:00"
+                            android:id="@+id/HourlyTime15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon15"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp15"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="23С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 15:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 15:00"
+                            android:id="@+id/HourlyTime16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/rain"/>
+                            android:id="@+id/HourlyIcon16"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp16"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="23С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 16:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 16:00"
+                            android:id="@+id/HourlyTime17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/thunder"/>
+                            android:id="@+id/HourlyIcon17"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp17"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 17:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 17:00"
+                            android:id="@+id/HourlyTime18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/thunder"/>
+                            android:id="@+id/HourlyIcon18"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp18"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="20С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 18:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 18:00"
+                            android:id="@+id/HourlyTime19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/thunder"/>
+                            android:id="@+id/HourlyIcon19"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp19"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="18С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 19:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 19:00"
+                            android:id="@+id/HourlyTime20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/cloudy"/>
+                            android:id="@+id/HourlyIcon20"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp20"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="17С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 20:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 20:00"
+                            android:id="@+id/HourlyTime21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/cloudywithsun"/>
+                            android:id="@+id/HourlyIcon21"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp21"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 21:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 21:00"
+                            android:id="@+id/HourlyTime22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/sun"/>
+                            android:id="@+id/HourlyIcon22"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp22"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="14С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 22:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 22:00"
+                            android:id="@+id/HourlyTime23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon23"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp23"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
                     <!-- 23:00 -->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/HourlyLayoutWidth"
+                        android:layout_height="@dimen/HourlyLayoutHeight"
                         android:orientation="vertical">
 
                         <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 23:00"
+                            android:id="@+id/HourlyTime24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="00:00"
                             android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
+                            android:textSize="@dimen/HourlyTextSizeData"/>
 
                         <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
+                            android:id="@+id/HourlyIcon24"
+                            android:layout_width="@dimen/HourlyImageSizeIconWidth"
+                            android:layout_height="@dimen/HourlyImageSizeIconHeight"
+                            android:layout_gravity="center"
+                            android:src="@drawable/d01d"/>
+
                         <TextView
-                            android:layout_width="50dp"
+                            android:id="@+id/HourlyTemp24"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="9С°"
+                            android:layout_gravity="center"
+                            android:text="8С°"
                             android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
-
-                    </LinearLayout>
-
-                    <!-- 24:00 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="25dp"
-                            android:text=" 24:00"
-                            android:textColor="#E7EBFB"
-                            android:textSize="17dp"/>
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/night"/>
-                        <TextView
-                            android:layout_width="50dp"
-                            android:layout_height="wrap_content"
-                            android:text="7С°"
-                            android:textColor="#D8DAE3"
-                            android:textSize="19dp" />
+                            android:textSize="@dimen/HourlyTextSizeTemp" />
 
                     </LinearLayout>
 
@@ -727,255 +870,274 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!-- Понедельник -->
+                <!-- Day 1 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="ПН"
+                        android:id="@+id/DailyData1"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="Завтра, 2 июн."
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData" />
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/thunder" />
+                        android:id="@+id/DailyIcon1"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp1"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Вторник -->
+                <!-- Day 2 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="50dp">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:id="@+id/DailyData2"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/sun" />
+                        android:id="@+id/DailyIcon2"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/n11n" />
 
                     <TextView
+                        android:id="@+id/DailyTemp2"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Среда -->
+                <!-- Day 3 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="СР"
+                        android:id="@+id/DailyData3"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/sun" />
+                        android:id="@+id/DailyIcon3"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp3"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Четверг -->
+                <!-- Day 4 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="ЧТ"
+                        android:id="@+id/DailyData4"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/cloudy" />
+                        android:id="@+id/DailyIcon4"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp4"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Пятница -->
+                <!-- Day 5 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="ПТ"
+                        android:id="@+id/DailyData5"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/cloudy" />
+                        android:id="@+id/DailyIcon5"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp5"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Суббота -->
+                <!-- Day 6 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="СБ"
+                        android:id="@+id/DailyData6"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/sun" />
+                        android:id="@+id/DailyIcon6"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp6"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
 
-                <!-- Воскресенье -->
+                <!-- Day 7 -->
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/DailyLayoutHeight">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
-                        android:text="ВС"
+                        android:id="@+id/DailyData7"
+                        android:layout_width="@dimen/DailyTextViewSize"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/DailyLayoutMarginStart"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
+                        android:text="ВТ"
                         android:textColor="#FFA5AABD"
-                        android:textSize="25dp"/>
+                        android:textSize="@dimen/DailyTextSizeData"/>
 
                     <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="45dp"
-                        android:src="@drawable/thunder" />
+                        android:id="@+id/DailyIcon7"
+                        android:layout_width="@dimen/DailyImageSizeIcon"
+                        android:layout_height="@dimen/DailyImageSizeIcon"
+                        android:layout_weight="3"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopIcon"
+                        android:src="@drawable/d01d" />
 
                     <TextView
+                        android:id="@+id/DailyTemp7"
                         android:layout_width="wrap_content"
-                        android:layout_height="44dp"
-
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="right"
+                        android:layout_marginEnd="@dimen/DailyLayoutMarginEnd"
+                        android:layout_marginTop="@dimen/DailyLayoutMarginTopText"
                         android:text="28С°/15С°"
-                        android:textColor="#FF818EC3"
-                        android:textSize="21dp"/>
+                        android:textColor="#FFA5AABD"
+                        android:textSize="@dimen/DailyTextSizeTemp"/>
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
 
 
-
-            <!-- ВОСХОД -->
-
+            <!-- Sunrise - Sunset -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp">
+                android:layout_height="80dp"
+                android:layout_marginTop="25dp">
 
                 <ImageView
                     android:layout_width="70dp"
@@ -984,19 +1146,38 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:src="@drawable/sun" />
+                    android:src="@drawable/sunrisesunset" />
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Восход: 03:45"
-                    android:textColor="#FFD6DDF4"
-                    android:textSize="20dp" />
+                    <TextView
+                        android:id="@+id/CurrentSunrise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Восход: "
+                        android:textColor="#FFD6DDF4"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/CurrentSunset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Закат: "
+                        android:textColor="#FFD6DDF4"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -1017,6 +1198,7 @@
                     android:src="@drawable/wind" />
 
                 <TextView
+                    android:id="@+id/CurrentWindSpeed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -1034,7 +1216,8 @@
             <LinearLayout
 
                 android:layout_width="match_parent"
-                android:layout_height="80dp">
+                android:layout_height="80dp"
+                android:layout_marginBottom="30dp">
 
                 <ImageView
                     android:layout_width="70dp"
@@ -1047,6 +1230,7 @@
 
 
                 <TextView
+                    android:id="@+id/CurrentHumidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -1058,18 +1242,6 @@
                     android:textSize="20dp" />
 
             </LinearLayout>
-
-<!--            -->
-
-            <TextView
-                android:id="@+id/please"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textIsSelectable="true"
-                android:layout_margin="25dp"
-                android:text="sadasd"
-                android:textColor="#E7EBFB"
-                android:textSize="30dp"/>
 
         </LinearLayout>
 

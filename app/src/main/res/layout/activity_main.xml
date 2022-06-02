@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluemountainback"
+    android:background="@drawable/bluemountainbackground"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -22,10 +22,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="19"
-            android:hint="@string/id"
-            android:inputType="text"
-            android:textColor="#1f2b6c"
             android:backgroundTint="@android:color/transparent"
+            android:hint="@string/idCity"
+            android:inputType="text"
+            android:textColor="#E7EBFB"
+            android:textColorHint="#E7EBFB"
             android:textSize="20sp" />
 
         <ImageButton
@@ -35,16 +36,16 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:background="@android:color/transparent"
-            android:src="@drawable/lupa" />
+            android:src="@drawable/whitelupa" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_result"
+        android:id="@+id/tv_result1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/result"
+        android:text=""
         android:textColor="#1f2b6c" />
 
 

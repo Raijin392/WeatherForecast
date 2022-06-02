@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="DailyLayoutHeight">50dp</dimen>
+    <dimen name="DailyTextSizeData">15sp</dimen>
+    <dimen name="DailyTextSizeTemp">15sp</dimen>
+    <dimen name="DailyImageSizeIcon">35dp</dimen>
+    <dimen name="DailyLayoutMarginStart">15dp</dimen>
+    <dimen name="DailyLayoutMarginEnd">15dp</dimen>
+    <dimen name="DailyLayoutMarginTopText">14dp</dimen>
+    <dimen name="DailyLayoutMarginTopIcon">7dp</dimen>
+
+    <dimen name="DailyTextViewSize">110dp</dimen>
+
+
+    <dimen name="HourlyLayoutWidth">50dp</dimen>
+    <dimen name="HourlyLayoutHeight">120dp</dimen>
+    <dimen name="HourlyTextSizeData">15sp</dimen>
+    <dimen name="HourlyTextSizeTemp">15sp</dimen>
+    <dimen name="HourlyImageSizeIconWidth">35dp</dimen>
+    <dimen name="HourlyImageSizeIconHeight">70dp</dimen>
+    <dimen name="HourlyDistanceSize">5dp</dimen>
+    
+</resources> 
